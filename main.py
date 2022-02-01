@@ -7,4 +7,6 @@ data = requests.get(url)
 # This parses all the tables in webpages to a list
 df_list = pd.read_html(data.text) 
 df = df_list[0]
-print(df.head())
+
+# Save as csv file
+df.to_csv("data.csv")
